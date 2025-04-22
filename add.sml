@@ -1,4 +1,4 @@
-1330 ;; Enter first num:
+1330 ;; "Enter first num: "
 1313
 1319
 1304
@@ -18,7 +18,7 @@
 
 1000 ;; READ 00
 
-1330 ;; Enter second num:
+1330 ;; "Enter second num: "
 1313
 1319
 1304
@@ -42,7 +42,7 @@
 3001 ;; ADD 01
 2102 ;; STORE 02
 
-1345 ;; The sum is:
+1345 ;; "The sum is: "
 1307
 1304
 1362
@@ -55,6 +55,6 @@
 1378
 1362
 1102
-1395 ;; newline
+1395 ;; "\n"
 
 4300 ;; halt
