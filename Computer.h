@@ -132,10 +132,10 @@ public:
                 instCount = operand;
                 break;
             case BRANCHNEG: // jmp if neg
-                instCount = operand ? accum < 0 : instCount;
+                instCount = accum < 0 ? operand : instCount;
                 break;
             case BRANCHZERO: // jmp if zero
-                instCount = operand ? accum == 0 : instCount;
+                instCount = accum == 0 ? operand : instCount;
                 break;
             case JUMP:
                 instCount += operand - 1;
