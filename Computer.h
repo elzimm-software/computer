@@ -14,8 +14,8 @@
 /****Input/output operations: ****/
 #define READ 10 // Read a word from the keyboard into a specific location in memory.
 #define WRITE 11 //Write a word from a specific location in memory to the screen.
-#define WRITEASCIIADDR 12 //Write a character based on the number at the address.
-#define WRITEASCII 13 //Write character defined by the operand. (use the reduced ascii table defined in reduced_ascii_table.csv)
+#define WRITE_ASCII_ADDR 12 //Write a character based on the number at the address.
+#define WRITE_ASCII 13 //Write character defined by the operand. (use the reduced ascii table defined in reduced_ascii_table.csv)
 
 /****Load/store operations: ****/
 #define LOAD 20 //Load a word from a specific location in memory into the accumulator.
@@ -32,11 +32,11 @@
 
 /****Transfer-of-control operations:****/
 #define BRANCH 40 //Branch to a specific location in memory.
-#define BRANCHNEG 41 //Branch to a specific location in memory if the accumulator is negative.
-#define BRANCHZERO 42 //Branch to a specific location in memory if the accumulator is zero.
+#define BRANCH_NEG 41 //Branch to a specific location in memory if the accumulator is negative.
+#define BRANCH_ZERO 42 //Branch to a specific location in memory if the accumulator is zero.
 #define JUMP 44 //Jump a given number of lines.
-#define JUMPNEG 45 //Jump a given number of lines if the accumulator is negative.
-#define JUMPZERO 46 //Jump a given number of lines if the accumulator is zero.
+#define JUMP_NEG 45 //Jump a given number of lines if the accumulator is negative.
+#define JUMP_ZERO 46 //Jump a given number of lines if the accumulator is zero.
 #define HALT 43 //Halt—i.e., the program has completed its task.
 
 const char ASCII[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
@@ -95,10 +95,10 @@ public:
             case WRITE: // write
                 std::cout << memory[operand + prog_size];
                 break;
-            case WRITEASCIIADDR: // write ascii character
+            case WRITE_ASCII_ADDR: // write ascii character
                 std::cout << ASCII[memory[operand + prog_size]];
                 break;
-            case WRITEASCII:
+            case WRITE_ASCII:
                 std::cout << ASCII[operand];
                 break;
             case LOAD: // load acc
@@ -131,19 +131,19 @@ public:
             case BRANCH: // jmp
                 instCount = operand;
                 break;
-            case BRANCHNEG: // jmp if neg
+            case BRANCH_NEG: // jmp if neg
                 instCount = accum < 0 ? operand : instCount;
                 break;
-            case BRANCHZERO: // jmp if zero
+            case BRANCH_ZERO: // jmp if zero
                 instCount = accum == 0 ? operand : instCount;
                 break;
             case JUMP:
                 instCount += operand - 1;
                 break;
-            case JUMPNEG:
+            case JUMP_NEG:
                 instCount += (operand - 1) * (accum < 0);
                 break;
-            case JUMPZERO:
+            case JUMP_ZERO:
                 instCount += (operand - 1) * (accum == 0);
                 break;
             case HALT: // halt
