@@ -1,0 +1,99 @@
+DEC,ASCII,SYMBOL,DESC
+0,97,'a',letter a 
+1,98,'b',letter b 
+2,99,'c',letter c 
+3,100,'d',letter d 
+4,101,'e',letter e 
+5,102,'f',letter f 
+6,103,'g',letter g 
+7,104,'h',letter h 
+8,105,'i',letter i 
+9,106,'j',letter j 
+10,107,'k',letter k 
+11,108,'l',letter l 
+12,109,'m',letter m 
+13,110,'n',letter n 
+14,111,'o',letter o 
+15,112,'p',letter p 
+16,113,'q',letter q 
+17,114,'r',letter r 
+18,115,'s',letter s 
+19,116,'t',letter t 
+20,117,'u',letter u 
+21,118,'v',letter v 
+22,119,'w',letter w 
+23,120,'x',letter x 
+24,121,'y',letter y 
+25,122,'z',letter z 
+26,65,'A',letter A 
+27,66,'B',letter B 
+28,67,'C',letter C 
+29,68,'D',letter D 
+30,69,'E',letter E 
+31,70,'F',letter F 
+32,71,'G',letter G 
+33,72,'H',letter H 
+34,73,'I',letter I 
+35,74,'J',letter J 
+36,75,'K',letter K 
+37,76,'L',letter L 
+38,77,'M',letter M 
+39,78,'N',letter N 
+40,79,'O',letter O 
+41,80,'P',letter P 
+42,81,'Q',letter Q 
+43,82,'R',letter R 
+44,83,'S',letter S 
+45,84,'T',letter T 
+46,85,'U',letter U 
+47,86,'V',letter V 
+48,87,'W',letter W 
+49,88,'X',letter X 
+50,89,'Y',letter Y 
+51,90,'Z',letter Z 
+52,48,'0',digit 0 
+53,49,'1',digit 1 
+54,50,'2',digit 2 
+55,51,'3',digit 3 
+56,52,'4',digit 4 
+57,53,'5',digit 5 
+58,54,'6',digit 6 
+59,55,'7',digit 7 
+60,56,'8',digit 8 
+61,57,'9',digit 9 
+62,32,' ,space
+63,33,'!',exclamation mark
+64,34,"'""'",double quote
+65,35,'#',hash
+66,36,'$',dollar sign
+67,37,'%',percent sign
+68,38,'&',ampersand
+69,39,"""'""",apostrophe
+70,40,'(',left parenthesis
+71,41,')',right parenthesis
+72,42,'*',asterisk
+73,43,'+',plus
+74,44,"','",comma
+75,45,'-',hyphen
+76,46,'.',period
+77,47,'/',forward slash
+78,58,':',colon
+79,59,';',semicolon
+80,60,'<',less than
+81,61,'=',equals
+82,62,'>',greater than
+83,63,'?',question mark
+84,64,'@',at symbol
+85,91,'[',left bracket
+86,92,'\\',backslash
+87,93,']',right bracket
+88,94,'^',caret
+89,95,'_',underscore
+90,96,'`',grave accent
+91,123,'{',left brace
+92,124,'|',vertical bar
+93,125,'}',right brace
+94,126,'~',tilde
+95,10,'\n',newline
+96,13,'\r',carriage return
+97,9,'\t',horizontal tab
