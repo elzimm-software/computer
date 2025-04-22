@@ -13,7 +13,7 @@ const char ASCII[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l'
                       '\n', '\r', '\t'};
 
 int char_index(const char ch) {
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 98; i++) {
         if (ASCII[i] == ch) {
             return i;
         }
