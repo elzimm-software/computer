@@ -2,7 +2,7 @@
 #include "Computer.h"
 
 int main(int argc, char* argv[]) {
-    Computer comp(100);
+    Computer comp(1000);
     std::cout << "Initialized" << std::endl;
     comp.load(argv[1]);
     std::cout << "Program read" << std::endl;
