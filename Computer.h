@@ -34,6 +34,9 @@
 #define BRANCH 40 //Branch to a specific location in memory.
 #define BRANCHNEG 41 //Branch to a specific location in memory if the accumulator is negative.
 #define BRANCHZERO 42 //Branch to a specific location in memory if the accumulator is zero.
+#define JUMP 44 //Jump a given number of lines.
+#define JUMPNEG 45 //Jump a given number of lines if the accumulator is negative.
+#define JUMPZERO 46 //Jump a given number of lines if the accumulator is zero.
 #define HALT 43 //Halt—i.e., the program has completed its task.
 
 const char ASCII[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
@@ -133,6 +136,15 @@ public:
                 break;
             case BRANCHZERO: // jmp if zero
                 instCount = operand ? accum == 0 : instCount;
+                break;
+            case JUMP:
+                instCount += operand - 1;
+                break;
+            case JUMPNEG:
+                instCount += (operand - 1) * (accum < 0);
+                break;
+            case JUMPZERO:
+                instCount += (operand - 1) * (accum == 0);
                 break;
             case HALT: // halt
                 return HALT;
