@@ -36,17 +36,20 @@
 #define BRANCHZERO 42 //Branch to a specific location in memory if the accumulator is zero.
 #define HALT 43 //Halt—i.e., the program has completed its task.
 
-const char ASCII[] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
-                       'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
-                       '0','1','2','3','4','5','6','7','8','9',
-                       ' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.','/',
-                       ':',';','<','=','>','?','@','[','\\',']','^','_','`','{','|','}','~',
-                       '\n','\r','\t'};
+const char ASCII[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+                      't', 'u', 'v', 'w', 'x', 'y', 'z',
+                      'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
+                      'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+                      '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                      ' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/',
+                      ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~',
+                      '\n', '\r', '\t'};
 
 class Computer {
 public:
 
-    explicit Computer(size_t memory_size) : memory_size(memory_size), prog_size(0), accum(0), instReg(0), instCount(0), opcode(0), operand(0) {
+    explicit Computer(size_t memory_size) : memory_size(memory_size), prog_size(0), accum(0), instReg(0), instCount(0),
+                                            opcode(0), operand(0) {
         memory = new int[memory_size];
         init_mem();
     }
@@ -82,43 +85,43 @@ public:
         operand = (instReg % 100);
         switch (opcode) {
             case READ: // read
-                std::cin >> memory[operand+prog_size];
+                std::cin >> memory[operand + prog_size];
                 break;
             case WRITE: // write
-                std::cout << memory[operand+prog_size];
+                std::cout << memory[operand + prog_size];
                 break;
             case WRITEASCIIADDR: // write ascii character
-                std::cout << ASCII[memory[operand+prog_size]];
+                std::cout << ASCII[memory[operand + prog_size]];
                 break;
             case WRITEASCII:
                 std::cout << ASCII[operand];
                 break;
             case LOAD: // load acc
-                accum = memory[operand+prog_size];
+                accum = memory[operand + prog_size];
                 break;
             case STORE: // read acc
-                memory[operand+prog_size] = accum;
+                memory[operand + prog_size] = accum;
                 break;
             case DIRECT_LOAD: // load next operand into operand
-                memory[operand+prog_size] = (memory[instCount++] % 100) + prog_size;
+                memory[operand + prog_size] = (memory[instCount++] % 100) + prog_size;
                 break;
             case MOVE:
-                memory[operand+prog_size] = memory[(memory[instCount++] % 100) + prog_size];
+                memory[operand + prog_size] = memory[(memory[instCount++] % 100) + prog_size];
                 break;
             case ADD: // add
-                accum += memory[operand+prog_size];
+                accum += memory[operand + prog_size];
                 break;
             case SUBTRACT: // sub
-                accum -= memory[operand+prog_size];
+                accum -= memory[operand + prog_size];
                 break;
             case DIVIDE: // div
-                accum /= memory[operand+prog_size];
+                accum /= memory[operand + prog_size];
                 break;
             case MULTIPLY: // mul
-                accum *= memory[operand+prog_size];
+                accum *= memory[operand + prog_size];
                 break;
             case REMAINDER:
-                accum %= memory[operand+prog_size];
+                accum %= memory[operand + prog_size];
                 break;
             case BRANCH: // jmp
                 instCount = operand;

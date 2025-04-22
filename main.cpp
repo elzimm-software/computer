@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Computer.h"
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     Computer comp(100);
     std::cout << "Initialized" << std::endl;
     comp.load(argv[1]);
