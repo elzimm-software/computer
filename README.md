@@ -20,6 +20,10 @@ Any non numeric character will be considered a comment.  Comments can be on sepa
 
 *Lines with no machine code do not contribute to the end position of BRANCH or JUMP commands.
 
+## String to Simple Machine Language
+
+`strtosml.cpp` is an included utility thay converts strings of text, passed at the command line, into SML code in accordance with the reduced ASCII table.
+
 ## Op-Codes
 
 | Operation        | Code | Description                                                  |
