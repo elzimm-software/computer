@@ -72,8 +72,10 @@ public:
         std::string msg;
         int mem_loc = 0;
         while (std::getline(input, msg)) {
-            // atoi call ignores all alpha characters after number
-            load_command(atoi(msg.c_str()), mem_loc++);
+            if (!msg.empty() && isdigit(msg[0])) {
+                // atoi call ignores all alpha characters after number
+                load_command(atoi(msg.c_str()), mem_loc++);
+            }
         }
         puts("+++ Program loading from file completed ***");
         input.close();
